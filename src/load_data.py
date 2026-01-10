@@ -9,7 +9,7 @@ NOVELS_DIR = os.path.join(DATA_DIR, "novels")
 def load_train_test():
     train_path = os.path.join(DATA_DIR, "train.csv")
     test_path = os.path.join(DATA_DIR, "test.csv")
-
+    
     train_df = pd.read_csv(train_path)
     test_df = pd.read_csv(test_path)
 
