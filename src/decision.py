@@ -4,10 +4,10 @@ HIGH_THRESHOLD = 0.45
 LOW_THRESHOLD = 0.30
 
 
-def decide_claim(score, claim=None, evidence_chunks=None, high_thres=None, low_thre=None):
-    if score >= high_thres:
+def decide_claim(score, claim=None, evidence_chunks=None):
+    if score >= HIGH_THRESHOLD:
         return True
-    elif score <= low_thre:
+    elif score <= LOW_THRESHOLD:
         return False
     else:
         if claim is None or evidence_chunks is None:
@@ -17,4 +17,5 @@ def decide_claim(score, claim=None, evidence_chunks=None, high_thres=None, low_t
 
 def final_decision(claim_results, support_ratio=0.6):
     return sum(claim_results) / len(claim_results) >= support_ratio
+
 
